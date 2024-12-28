@@ -1,0 +1,6 @@
+{
+    "request":["Auth"],
+    "response":[],
+    "boot":[],
+    "run_cli":["Websocket"]
+}

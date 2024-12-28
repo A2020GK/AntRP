@@ -1,0 +1,22 @@
+.edit {
+    position: relative;
+    left:50%;
+    margin-right: 15px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+}
+.content h4 {
+    margin: 0;
+    padding: 0;
+}
+.content p.character-description {
+    margin: 0;
+}
+.content textarea.character-description {
+    resize: none;
+}

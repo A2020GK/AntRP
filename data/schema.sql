@@ -1,0 +1,4 @@
+CREATE TABLE "users" (`username` TEXT PRIMARY KEY NOT NULL, `password` BLOB NOT NULL, `name` TEXT NOT NULL ,`birthday` INTEGER NOT NULL, `roles` TEXT NOT NULL, `registered_at` INTEGER NOT NULL);
+CREATE TABLE "characters" (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT UNIQUE NOT NULL, `owner` TEXT REFERENCES `users`(`username`), `description` TEXT, `decoration` TEXT DEFAULT '[]');
+CREATE TABLE "messages" (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `sender` TEXT NOT NULL REFERENCES `users`(`username`), `text` TEXT NOT NULL, `edited` TEXT NOT NULL DEFAULT 'no',`sent_at` INTEGER NOT NULL, reply_to INTEGER REFERENCES `messages`(`id`), `from_character` INTEGER REFERENCES `characters`(`id`));
+CREATE TABLE "sessions" (`token` TEXT PRIMARY KEY NOT NULL, `user` TEXT NOT NULL REFERENCES `users`(`username`), `expires` INTEGER NOT NULL);

@@ -1,0 +1,6 @@
+/.vscode/
+/data/database.sqlite3
+/docs/
+/temp/
+/vendor/
+/phpDocumentor.phar

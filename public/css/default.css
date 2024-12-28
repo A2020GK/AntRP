@@ -1,0 +1,160 @@
+@import url(/fontawesome/css/fontawesome.min.css);
+@import url(/fontawesome/css/solid.min.css);
+
+html,body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+body {
+    background-color: purple;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.app {
+    display: flex;
+    height: 100%;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+}
+header {
+    background-color: white;
+    height: 50px;
+    width: 75%;
+    margin-top: 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header h2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width:100%;
+    font-size: medium;
+}
+.fa-solid {
+    font-size: larger;
+}
+.menu-toggle {
+    position: relative;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+.sidebar {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background-color:#f0f0f0;
+    border-right: 1px solid black;
+    padding: 20px 0;
+    transform: translateX(-100%);
+    transition:  transform 0.3s ease-in-out;
+    max-width: 300px;
+}
+.sidebar.active {
+    transform: translateX(0);
+}
+.menu-close {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    font-size: x-large;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    min-height: 100px;
+    background-color: lightgray;
+    width: 95%;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 20px 0;
+    color: black;
+    text-align: center;
+    font-size: large;
+}
+main .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+@media screen and (min-width:768px) {
+    main {
+        width: 65%;
+    }
+    .sidebar {
+        width: 60%;
+    }
+}
+footer {
+    color: white;
+}
+a.link {
+    border: 1px solid black;
+    padding: 5px 10px;
+    background-color: lightblue;
+    text-decoration: none;
+    color: black;
+    border-radius: 15px;
+}
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar li {
+    margin-top: 30px;
+    margin-bottom: -10px;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 75%;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: large;
+    color: #333;
+}
+
+.sidebar a:hover {
+    color: #666;
+}
+input[type="text"], input[type="password"] {
+    border-radius: 10px;
+    padding: 2.5px 5px;
+}
+button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.error {
+    color: red;
+}
+ul {
+    display: inline-block;
+}
+.break-line {
+    height: 0;
+    border-top:3px solid black;
+    border-radius:3px;
+    width: 75%;
+}

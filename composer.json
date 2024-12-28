@@ -1,0 +1,16 @@
+{
+    "require": {
+        "smarty/smarty": "^5.4",
+        "cboden/ratchet": "^0.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "System\\": "system/",
+            "App\\": "src/"
+        },
+        "files": ["system/boot.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}
