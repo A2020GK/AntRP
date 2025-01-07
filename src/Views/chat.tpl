@@ -77,18 +77,39 @@
     </div> *}
 
     <div class="chat-container">
+        {* <div class="message sent">
+            <div class="sender">Antony</div>
+            <div class="message-content">Бля, я заебался чёт этот shit пилить</div>
+            <span class="timestamp">13:37</span>
+        </div>
+        <div class="message received">
+            <div class="sender">Ролевеки</div>
+            <div class="message-content">Ты.. Ты будешь работать до смерти, а когда сдохнешь - мы воскресим тебя и заставим снова работать</div>
+            <span class="timestamp">13:37</span>
+        </div>
+        <div class="message sent">
+            <div class="sender">Antony</div>
+            <div class="message-content">
+                <div class="reply-block">
+                    <div class="sender">Ролевеки</div>
+                    <div class="message-content received">Ты.. Ты будешь работать до сме...</div>
+                </div>
+                Неееее....
+            </div>
+            <span class="timestamp">13:37</span>
+        </div> *}
+
+        
+
 
     </div>
 
     <div class="input-container">
         <button class="options-toggle">
-        <i class="fa-solid fa-bars"></i>
-        
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <textarea placeholder="Type a message..."></textarea>
-
+        <textarea class="message-text" placeholder="Внедрите текст..."></textarea>
         <button><i class="fa-solid fa-arrow-right"></i></button>
-
     </div>
 
     <div class="chat-options">

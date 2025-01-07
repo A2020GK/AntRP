@@ -1,0 +1,142 @@
+.chat-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.message-content {
+    padding: 5px 10px;
+    /* Reduced padding for lower height */
+    border-radius: 10px;
+    max-width: 70%;
+    font-size: 14px;
+    /* Adjusted font size */
+}
+
+.received .message-content {
+    background-color: #E1FFC7;
+    margin-right: auto;
+}
+
+.sent .message-content, .message-content.sent {
+    background-color: #0084FF;
+    color: white;
+    margin-left: auto;
+}
+.message-content.received {
+    background-color: #E1FFC7;
+    color: black;
+    margin: 0 auto;
+}
+.message-content.sent {
+    background-color: #0084FF;
+    color: white;
+    margin: 0 auto;
+}
+
+.reply-block {
+    background-color: #F0F0F0;
+    /* Light gray background for reply block */
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+    /* Smaller font size for reply text */
+    color: #333; /* NIGA */
+    /* Darker text color */
+}
+
+.sender {
+    font-weight: bold;
+    font-size: 12px;
+    /* Smaller font size for sender name */
+    margin-bottom: 2px;
+    /* Space between sender name and message */
+}
+
+.received .sender {
+    margin-right: auto;
+    /* Align sender name to the left for received messages */
+}
+
+.sent .sender {
+    margin-left: auto;
+    /* Align sender name to the right for sent messages */
+}
+
+.timestamp {
+    font-size: 0.7em;
+    /* Smaller timestamp */
+    color: #888;
+}
+
+.received .timestamp {
+    margin-left: 0;
+    /* Align timestamp to the left for received messages */
+    margin-right: auto;
+    /* Align timestamp to the left for received messages */
+}
+
+.sent .timestamp {
+    margin-left: auto;
+    /* Align timestamp to the right for sent messages */
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;  
+    background-color: white;
+    border-top: 1px solid #ccc;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.input-container textarea {
+    overflow-y: auto; /* Ensure scrollbar appears when content exceeds max height */
+    flex: 1;
+    padding: 0 10px;
+    padding-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0px;
+    resize: none;
+    margin: 0 10px;
+}
+
+.input-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #0084FF;
+    color: white;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #005BB5;
+}
+.chat-options {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background-color: #f0f0f0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+.chat-options.active {
+    transform: translateY(0);
+}
