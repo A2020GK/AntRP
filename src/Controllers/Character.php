@@ -8,7 +8,7 @@ use App\Models\Character as Model;
 class Character extends Controller {
     public function list(Request $request, array $args=[]) {
         // if(!$request->data["session"]) return RedirectResponse::toRoute("user.login");
-        // ^^^ This kills unwanted nigas who want to lurk something they're not prevented to
+        // ^^^ This kills unwanted nigas who want to lurk something they're not allowed to
         return $this->renderTemplate("character.list", ["characters"=>Model::getAll()]);
     }
     public function view(Request $request, array $args=[]) {
@@ -25,7 +25,7 @@ class Character extends Controller {
     }
     public function edit(Request $request, array $args=[]) {
         if(!$request->data["session"]) return RedirectResponse::toRoute("user.login");
-        // ^^^ This kills unwanted nigas who want to lurk something they're not prevented to
+        // ^^^ This kills unwanted nigas who want to lurk something they're not allowed to
         $ch = Model::getById(intval($args["id"]));
         $user=$request->data["session"]->user;
         $canEdit = false;
