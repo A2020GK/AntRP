@@ -17,7 +17,7 @@ class Websocket extends Module
                     new Chat()
                 )
             ),
-            8080
+            8001
         );
 
         $server->run();

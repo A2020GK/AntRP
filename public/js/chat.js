@@ -5,9 +5,10 @@ document.querySelector(".chat-options .menu-close").addEventListener("click", ev
     document.querySelector(".chat-options").classList.remove("active");
 });
 
+const messageText =document.querySelector("textarea.message-text");
 const maxOverflow = 4;
 
-document.querySelector("textarea.message-text").addEventListener("input", function (event) {
+messageText.addEventListener("input", function (event) {
     const textarea = event.target;
     const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight) || 20; // Fallback to 20px if NaN
     const maxHeight = lineHeight * maxOverflow + 2; // Adding a small buffer for better visibility
@@ -35,13 +36,13 @@ class Message {
         this.time = time;
         this.reply = reply;
     }
-    renderContent() {
+    renderContent() { // Рендер текста & текста ответа (если есть)
         let c = document.createElement("div");
         c.className = "message-content";
-        c.innerHTML += `<p>${this.text}</p>`;
+        this.text.split("\n").forEach(t=>c.innerHTML += `<p>${t}</p>`);
         return c;
     }
-    renderAsReplyBlock() {
+    renderAsReplyBlock() { // Рендер текста аки ответ, нужно для других объектов этого класса
         let d = document.createElement("div");
         d.className = "reply-block";
         d.classList.add(this.type);
@@ -49,7 +50,7 @@ class Message {
         d.appendChild(this.renderContent());
         return d;
     }
-    render() {
+    render() { // Рендер фулл убер прокаченного накаченного чёрного мужика
         let m = document.createElement("div");
         m.className = "message";
         m.classList.add(this.type);
@@ -60,7 +61,7 @@ class Message {
             c.innerHTML = (this.reply.renderAsReplyBlock()).outerHTML + c.innerHTML;
         }
         m.appendChild(c);
-
+        
         m.innerHTML += `<span class="timestamp">${this.time}</span>`;
 
         return m;
@@ -74,7 +75,7 @@ function getCookie(name) {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-let ws = new WebSocket(`ws://${location.hostname}:8080`);
+let ws = new WebSocket(`ws://${location.hostname}:8001`);
 function sendPackage(package) {
     ws.send(JSON.stringify(package));
 }
@@ -107,3 +108,13 @@ function serverMessage(event) {
 }
 
 ws.addEventListener("message",serverMessage);
+
+document.querySelector(".send").addEventListener("click",function(event) {
+    console.log("packmsg");
+    let text=messageText.value.trim();
+    messageText.value="";
+    sendPackage({
+        type:"message.send",
+        text:text
+    });
+});

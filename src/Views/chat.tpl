@@ -109,7 +109,7 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <textarea class="message-text" placeholder="Внедрите текст..."></textarea>
-        <button><i class="fa-solid fa-arrow-right"></i></button>
+        <button class="send"><i class="fa-solid fa-arrow-right"></i></button>
     </div>
 
     <div class="chat-options">
