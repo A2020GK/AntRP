@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{$title} | AntRP</title>
+    <meta name="description" content="Web-chat for roleplaying games. Powered by AntWebKernel, developed by Antony (A2020GK)">
     {block "styles"}
         <link href="/css/default.css" rel="stylesheet">
     {/block}
